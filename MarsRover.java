@@ -47,19 +47,55 @@ public class MarsRover{
         for (int i = 0; i < move.length(); i++) {
 
            switch(move.charAt(i)){
-            case "L": 
+            case 'L': 
             switch(dir) {
               case "N":
-              dir = "W";
-              break;
+                {
+                  dir = "W";
+                  break;
+                }
               case "E":
-              dir = "N";
-              break;
+                {
+                 dir = "N";
+                 break;
+                }
               case "S":
+              {
+              dir = "E";
+              break;                
+              }
+              case "W":
+              {
+                dir = "S";
+              break;
+              }
+              default:
+              while(true) { 
+              System.out.println("Heading has to be N/E/W/S(directions) - \n Please enter the right heading:");
+              dir = s.next();
+              if(dir.length() > 1) {
+                System.out.println("Dude it's 1 letter -_-");
+              }
+              else {
+                i--;
+                break;
+              }
+              }
+            }
+            break;
+            case 'R': 
+            switch(dir) {
+              case "N":
               dir = "E";
               break;
-              case "W":
+              case "E":
               dir = "S";
+              break;
+              case "S":
+              dir = "W";
+              break;
+              case "W":
+              dir = "N";
               break;
               default:
               while(true) { 
@@ -74,34 +110,8 @@ public class MarsRover{
               }
               }
             }
-            case "R": 
-            switch(dir) {
-              case "N":
-              dir = "E";
-              break;
-              case "E":
-              dir = "S";
-              break;
-              case "S":
-              dir = "W";
-              break;
-              case "W":
-              dir = "N";
-              break;
-              default:
-              while(true) { 
-              System.out.println("Heading has to be N/E/W/S(directions) - \n Please enter the right heading:");
-              dir = s.next();
-              if(dir.length() > 1) {
-                System.out.println("Dude it's 1 letter -_-");
-              }
-              else {
-                i--;
-                break;
-              }
-              }
-            }
-            case "M":
+            break;
+            case 'M':
             switch(dir){
               case "N":
               ry1++; break;
@@ -122,12 +132,12 @@ public class MarsRover{
                 i--;
                 break;
               }
-              }
+              } 
             }
-              
+            break;
            	default:
-           	System.out.println("Invalid instr at move" + (i + 1));
-           	System.out.println("Please re-enter the " + (i + 1) + "th move");
+           	System.out.println("Invalid instruction at move" + (i + 1));
+           	System.out.println("Please re-enter the move");
             String temp = move.substring(0,i+1)+s.next()+move.substring(i+2);
             i--;
             }
