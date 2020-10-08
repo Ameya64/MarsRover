@@ -47,17 +47,19 @@ public class MarsRover{
 
            switch(move.charAt(i)){
            	case "L": 
+
+            
            	switch(dir) {
-           		case "N:
+           		case "N":
            		dir = "W";
            		break;
-           		case "E:
+           		case "E":
            		dir = "N";
            		break;
-           		case "S:
+           		case "S":
            		dir = "E";
            		break;
-           		case "W:
+           		case "W":
            		dir = "S";
            		break;
            		default:
@@ -65,10 +67,10 @@ public class MarsRover{
            		System.out.println("Heading has to be N/E/W/S(directions) - \n Please enter the right heading:");
            		dir = s.next();
            		if(dir.length() > 1) {
-           			System.out.println("Dude it's 1 letter -_-")
+           			System.out.println("Dude it's 1 letter -_-");
            		}
            		else {
-           			i--
+           			i--;
            			break;
            		}
            		}
