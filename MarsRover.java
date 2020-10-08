@@ -143,6 +143,7 @@ public class MarsRover{
             }
       	
         }
+        System.out.println(rx1 + " " + ry1 + " " + dir);
 
      }
 }
