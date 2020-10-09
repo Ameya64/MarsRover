@@ -4,6 +4,8 @@ public class MarsRover{
 
      public static void main(String []args){
          Scanner s = new Scanner(System.in);
+         MarsRover mallory = new MarsRover();
+         mallory.getData();
          float x, y;
          
         System.out.println("Welcome to NASA Mars Rover Command Center \n Please enter NE corner co-ordinates of Plateau:\n");
@@ -43,7 +45,7 @@ public class MarsRover{
         dir = dir.toUpperCase();
         String move = "";
         move = s.next();
-
+        move = move.toUpperCase();
         for (int i = 0; i < move.length(); i++) {
 
            switch(move.charAt(i)){
