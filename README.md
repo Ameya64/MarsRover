@@ -20,6 +20,7 @@ output (the feedback from the rovers to NASA). Each rover will move in series, i
 moving until the one preceding it finishes.
 
 ### INPUT
+
 Assume the southwest corner of the grid is 0,0 (the origin). The first
 line of input establishes the exploration grid bounds by indicating
 the coordinates corresponding to the northeast corner of the
@@ -35,11 +36,16 @@ instructions, it transmits its updated position and heading to NASA.
 
 ### TEST INPUT
 5 5
+
 1 2 N
+
 LMLMLMLMM
+
 3 3 E
+
 MMRMMRMRRM
 
 ### EXPECTED OUTPUT
 1 3 N
+
 5 1 E
