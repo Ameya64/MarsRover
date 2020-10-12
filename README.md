@@ -51,3 +51,12 @@ MMRMMRMRRM
 1 3 N
 
 5 1 E
+
+### To Execute
+
+Download the project and go into the project folder in the Terminal and type the following commands
+
+- javac *.java
+
+- java Main
+
