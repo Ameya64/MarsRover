@@ -6,7 +6,7 @@ public class Rover{
           protected float y;
           protected float rx;
           protected float ry;
-          protected String dir = "";
+          protected String z = "";
           protected String move = "";
 
           Rover() {
@@ -16,10 +16,10 @@ public class Rover{
             this.y = (float)y;
             //System.out.print(this.x+" "+this.y);
           }
-          Rover(Object rx, Object ry, Object dir, Object move) {
+          Rover(Object rx, Object ry, Object z, Object move) {
             this.rx = (float)rx;
             this.ry = (float)ry;
-            this.dir = (String)dir;
+            this.z = (String)z;
             this.move = (String)move;//System.out.print(this.x+" "+this.y);
           }
           
@@ -55,18 +55,18 @@ public class Rover{
          Object[] getData(float x, float y) {
          Scanner s = new Scanner(System.in);
          float rx, ry;
-         String dir = "",move = "";
+         String z = "",move = "";
         System.out.println("Please enter co-ordinates and heading of the Rover respectively followed by moving instructions(L/M/R) as one string:");
         while(true) {
          rx = s.nextFloat();
          ry = s.nextFloat();
-         dir = s.next();
+         z = s.next();
         move = s.next();
         move = move.toUpperCase();
-        //System.out.println(rx + " " + ry + " " + dir + " " + move);
+        //System.out.println(rx + " " + ry + " " + z + " " + move);
     /* Assuming a minimum size of the plateau as > (0.0001x0.0001) */
 
-        if (rx < 0.0001 || ry < 0.0001 || dir.length() > 1 || rx > x || ry > y) {
+        if (rx < 0.0001 || ry < 0.0001 || z.length() > 1 || rx > x || ry > y) {
             System.out.println("SW corner co-ordinates are (0,0) \n Please enter co-ordinates and heading of Rover 1 respectively (each must be > 0, < NE co-ordinates and the heading is one letter (N,E,S,W)):");
         }
     
@@ -74,12 +74,12 @@ public class Rover{
             break;
         }
         }
-        dir = dir.toUpperCase();
-        //System.out.println(rx + " " + ry + " " + dir + " " + move); 
+        z = z.toUpperCase();
+        //System.out.println(rx + " " + ry + " " + z + " " + move); 
         Object[] o = new Object[4];
         o[0] = rx;
         o[1] = ry;
-        o[2] = dir;
+        o[2] = z;
         o[3] = move;
         // for(int i = 0;i < o.length; i++) {
         //           System.out.println(o[i] + " "); 
@@ -94,7 +94,7 @@ public class Rover{
           float y = this.y;
           float rx = this.rx;
           float ry = this.ry;
-          String dir = this.dir;
+          String z = this.z;
           String move = this.move;
           Scanner s = new Scanner(System.in);
 
@@ -102,32 +102,32 @@ public class Rover{
 
            switch(move.charAt(i)){
             case 'L': 
-            switch(dir) {
+            switch(z) {
               case "N":
                 {
-                  dir = "W";
+                  z = "W";
                   break;
                 }
               case "E":
                 {
-                 dir = "N";
+                 z = "N";
                  break;
                 }
               case "S":
               {
-              dir = "E";
+              z = "E";
               break;                
               }
               case "W":
               {
-                dir = "S";
+                z = "S";
               break;
               }
               default:
               while(true) { 
               System.out.println("Heading has to be N/E/W/S(directions) - \n Please enter the right heading:");
-              dir = s.nextLine();
-              if(dir.length() > 1) {
+              z = s.nextLine();
+              if(z.length() > 1) {
                 System.out.println("Dude it's 1 letter -_-");
               }
               else {
@@ -138,24 +138,24 @@ public class Rover{
             }
             break;
             case 'R': 
-            switch(dir) {
+            switch(z) {
               case "N":
-              dir = "E";
+              z = "E";
               break;
               case "E":
-              dir = "S";
+              z = "S";
               break;
               case "S":
-              dir = "W";
+              z = "W";
               break;
               case "W":
-              dir = "N";
+              z = "N";
               break;
               default:
               while(true) { 
               System.out.println("Heading has to be N/E/W/S(directions) - \n Please enter the right heading:");
-              dir = s.next();
-              if(dir.length() > 1) {
+              z = s.next();
+              if(z.length() > 1) {
                 System.out.println("Dude it's 1 letter -_-");
               }
               else {
@@ -166,7 +166,7 @@ public class Rover{
             }
             break;
             case 'M':
-            switch(dir){
+            switch(z){
               case "N":
               ry++; break;
               case "E":
@@ -178,8 +178,8 @@ public class Rover{
               default:
               while(true) { 
               System.out.println("Heading has to be N/E/W/S(directions) - \n Please enter the right heading:");
-              dir = s.next();
-              if(dir.length() > 1) {
+              z = s.next();
+              if(z.length() > 1) {
                 System.out.println("Dude it's 1 letter -_-");
               }
               else {
@@ -197,7 +197,7 @@ public class Rover{
             }
         
         }
-        System.out.println(rx + " " + ry + " " + dir);
+        System.out.println(rx + " " + ry + " " + z);
         }
 
 }
