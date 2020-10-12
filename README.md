@@ -52,7 +52,7 @@ MMRMMRMRRM
 
 5 1 E
 
-### To Execute
+### EXECUTION
 
 Download the project and go into the project folder in the Terminal and type the following commands
 
